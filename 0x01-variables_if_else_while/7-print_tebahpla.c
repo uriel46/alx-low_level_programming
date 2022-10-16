@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int digit;
+	char alpha;
 
 	for (alpha = 'z'; alpha >= 'a'; alpha--)
 	putchar(alpha);
