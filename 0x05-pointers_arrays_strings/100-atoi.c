@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _atoi - this converts a string into an integer
- * @s: the string
- * Return: value
+ * _atoi -converts a string to an integer
+ * @s: the string to be converted
+ * Return: the integer value to be converted to string
  */
 
 int _atoi(char *s)
@@ -11,18 +11,13 @@ int _atoi(char *s)
 	int sign = 1;
 	unsigned int num = 0;
 
-	while (!('0' <= *s && *s <= '9') && *s != '\0')
-	{
+	do {
 		if (*s == '-')
 			sign *= -1;
-		if (*s == '+')
-			sign *= +1;
-		s++;
-	}
-	while ('0' <= *s && *s <= '9' && *s != '\n')
-	{
-		num = (num * 10) + (*s - '-');
-		s++;
-	}
+		else if (*s >= '0' && *s <= '9')
+			num = (num * 10) + (*s - '0');
+		else if (num > 0)
+			break;
+	} while (*s++);
 	return (num * sign);
 }
