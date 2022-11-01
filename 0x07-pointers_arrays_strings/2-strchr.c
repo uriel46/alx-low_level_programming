@@ -4,21 +4,17 @@
 /**
  * _strchr - this locates a character
  * @s: the string we look for
+ * @c: character to be located
  * Return: a pointer to the char or NULL
  */
-
 char *_strchr(char *s, char c)
 {
-	if (s == NULL)
-		return (NULL);
-	for (; *s; s++)
+	int index;
+
+	for (index = 0; s[index] >= '\0'; index++)
 	{
-		if (*s == c)
-			return (s);
+		if (s[index] == c)
+			return (s + index);
 	}
-	if (*s == c)
-	{
-		return (s);
-	}
-	return (NULL);
+	return ('\0');
 }
