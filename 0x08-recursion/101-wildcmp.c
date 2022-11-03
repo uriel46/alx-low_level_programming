@@ -11,6 +11,7 @@ int wildcmp(char *s1, char *s2);
  * @str: the string to ne measured
  * Return: the length
  */
+
 int strlen_no_wilds(char *str)
 {
 	int len = 0, index = 0;
